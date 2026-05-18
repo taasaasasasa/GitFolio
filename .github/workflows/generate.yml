@@ -1,0 +1,33 @@
+name: Compile Standalone Resume Document
+
+on:
+  push:
+    paths:
+      - 'resume.json'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Compile HTML Resume
+      run: python build_resume.py
+
+    - name: Commit and Push Resume Document
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add resume.html
+        git diff-index --quiet HEAD || git commit -m "bot: compiled fresh standalone resume.html"
+        git push

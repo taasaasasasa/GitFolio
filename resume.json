@@ -1,0 +1,26 @@
+{
+  "name": "Jane Doe",
+  "title": "Software Engineer & Security Analyst",
+  "contact": {
+    "email": "janedoe@example.com",
+    "github": "https://github.com/janedoe"
+  },
+  "education": [
+    {
+      "institution": "State University",
+      "degree": "B.S. in Computer Science",
+      "details": "Relevant Coursework: Data Structures, Systems Programming, Algorithms."
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "C++", "SQL"],
+    "technologies": ["Git", "Docker", "Linux"]
+  },
+  "projects": [
+    {
+      "name": "Open Source Tool Name",
+      "tech_stack": "Python / Bash",
+      "description": "A detailed sentence describing the problem you solved, the architecture you designed, and the engineering outcome."
+    }
+  ]
+}

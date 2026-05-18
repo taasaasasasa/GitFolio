@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Ignore local auto-generated outputs
+resume.html
+
+# Ignore local Python cache folder
+__pycache__/
