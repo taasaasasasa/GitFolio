@@ -1,2 +1,2 @@
 # GitFolio
-🚀 Automatically transform a structured JSON file into a dynamic, recruiter-ready GitHub Profile README using Python and GitHub Actions.
+🚀 An automated utility that transforms a raw, structured JSON file into a formal, print-ready HTML resume document using Python and GitHub Actions.
