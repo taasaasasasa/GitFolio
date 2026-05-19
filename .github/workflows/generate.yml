@@ -3,7 +3,7 @@ name: Compile Standalone Resume Document
 on:
   push:
     paths:
-      - 'resume.json'
+      - "resume.json"
   workflow_dispatch:
 
 jobs:
@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
     - name: Checkout repository code
@@ -19,7 +22,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: "3.10"
 
     - name: Compile HTML Resume
       run: python build_resume.py
@@ -28,7 +31,6 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        # Force tracker update v2
         git add -f resume.html
         git diff-index --quiet HEAD || git commit -m "bot: compiled fresh standalone resume.html"
         git push
