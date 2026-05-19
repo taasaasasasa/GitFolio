@@ -28,6 +28,7 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        # Force tracker update v2
         git add -f resume.html
         git diff-index --quiet HEAD || git commit -m "bot: compiled fresh standalone resume.html"
         git push
